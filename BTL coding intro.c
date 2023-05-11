@@ -3,17 +3,12 @@
 #include <stdlib.h>
 #include <string.h>
 
-
-
 #define size 100
-
 
 //declare global variable
 int baseHP1, baseHP2, wp1, wp2, ground;
 float realHP1,realHP2;
 float result;
-
-
 
 //input Data
 int input(){
@@ -41,15 +36,6 @@ int input(){
 		return 1;	
 }
 
-
-
-
-
-
-
-
-
-
 int primeCheck(int n){
 	int count = 0;
 	if( n < 2 ) return 0;
@@ -60,11 +46,9 @@ int primeCheck(int n){
 	if(count > 0) return 0;
 	
 	return 1;
-
 }
 
 	
-
 //find closest fabonaci
 int find_nearest_fibonacci(int n) {
       int a = 1, b = 1, c;
@@ -82,7 +66,6 @@ int find_nearest_fibonacci(int n) {
   }
 
 
-
 //Check fibonaci or not
 int isFibonacci(int n) {
     int a = 0, b = 1, c = 1;
@@ -97,8 +80,6 @@ int isFibonacci(int n) {
         return 0;
     }
 }
-
-
 
 
 //Check perfect number
@@ -179,10 +160,6 @@ int maxElement(int a[], int n){
 	
 	return max;
 }
-
-
-
-
 
 
 //wp1 machine
@@ -277,7 +254,6 @@ void wp2Machine()
 
 
 
-
 //Mostimportant Condition
 void baseCondition(){
 	//Condition 6
@@ -297,7 +273,6 @@ void baseCondition(){
 }
 
 
-
 //Both weapon machine
 void weaponMachine(){
 
@@ -314,7 +289,6 @@ void weaponMachine(){
 	//Machine dk 1,2,3
 		else result = (realHP1-realHP2+999)/2000;
 }
-
 
 
 //Ground conditions
@@ -360,10 +334,6 @@ void groundMachine(){
 			
 			break;
 		
-		
-		
-		
-		
 		//Condition 10
 		case 777:;					// ; here to fix error a label can only be part of a statement( la loi kh ddc declare sau label nnghia la sau xxx:
 			int godWeapon[size], total[size], compatipleWeapon[size], maxCompatipleWeapon, n;
@@ -392,7 +362,6 @@ void groundMachine(){
 				}
 			}
 			
-			
 			//chia case cua compatible weapon
 			if(countCompatipleAmount == 1) 
 			{
@@ -403,17 +372,7 @@ void groundMachine(){
 				wp1Machine();
 			}else{
 				weaponMachine();
-			}
-			
-			
-	
-			
-			
-			//Inilize value of circle table knight
-
-			
-			
-			
+			}			
 			break;
 			
 		case 888:;  //condition 11
@@ -431,8 +390,7 @@ void groundMachine(){
 					scanf("%d", &knightPower[i][j]);
 				}
 			}
-			
-			
+
 			//khoi tao gia tri cho sumCol = 0
 			for(int i = 0; i < row; i++){
 				sumCol[i] = 0;
@@ -452,8 +410,6 @@ void groundMachine(){
 			for(int i = 0; i < row; i++){
 				sumRow[i] = 0;
 			}
-	
-	
 	
 			//Tinh tong trong 1 hang voi n cot
 			for(int i = 0; i < row; i++){
@@ -490,10 +446,7 @@ void groundMachine(){
 				weaponMachine();
 			}
 			break;
-			
-			
-			
-			
+	
 			
 		case 999:;   //condition 12
 //			weaponMachine();
@@ -506,9 +459,6 @@ void groundMachine(){
 			//Morgana doc than chu
 			scanf("%s", thanchu);
 		
-		
-		
-		
 			int countEqual = 0;
 			for(int i = 0; i < 2; i++){
 				if(isEqualString(thanchu,example)){
@@ -518,10 +468,6 @@ void groundMachine(){
 			if(countEqual > 0){ //&& wp1 == 3){
 				wp1 = 0;
 				wp1Machine();
-			}//else if(countEqual = 0){
-//				wp1Machine();
-//			}
-
 
 			
 			//second request in condtion 12
@@ -540,21 +486,7 @@ void groundMachine(){
 					}
 				}
 			}
-			
-			
-			
-//			int countRepeat = 0;
-//			for(int i = 0; i < strlen(thanchu); i++){
-//				for(int j = 0;  j < strlen(saxon); j++){
-//					if(thanchu[i] == saxon[j]){
-//						countRepeat++;
-//					}
-//				}
-//			}
-			
-			
-			
-			
+					
 			
 			if(countRepeat > 3){
 //				wp2Machine();
@@ -573,11 +505,6 @@ void groundMachine(){
 	}
 	result = (realHP1-realHP2+999)/2000;
 }
-
-
-
-
-
 
 
 //weapon Case Machine
@@ -603,8 +530,6 @@ void conditionMachine()
 }
 
 
-
-
 //P(r) Winning ability of the Circle table knight
 float winPossibility(){		
 	
@@ -618,14 +543,11 @@ float winPossibility(){
 }
 
 
-
-
-
 //display value of fOut in format of 0.XX
 void display(int wp1, int wp2, int baseHP1, int baseHP2, int ground)
 {	
 	
-	//Gan' Kq v‡o Out variable
+	//Gan' Kq v√†o Out variable
 	float out = winPossibility();
 	
 	
@@ -640,22 +562,16 @@ void display(int wp1, int wp2, int baseHP1, int baseHP2, int ground)
 
 
 
-
 int main(void)
 {
 	//read data from input to corresponding variables
 	input();
-	
 
-
-	
 
 	//write your code here	
 	display(wp1,wp2,baseHP1,baseHP2,ground);
 	
-	
 
-	
 	
 	return 0;
 }
